@@ -76,4 +76,9 @@ const fibonacci3 = (n, prev = 0, curr = 1) => {
   return fibonacci(n - 1, curr, prev + curr);
 };
 
-
+//FUN FACT ABOUT TCO: Tail Call Optimization (TCO) is not widely implemented in most JavaScript engines due to its complexity and
+// potential trade-offs in debugging and performance. While TCO can reduce stack usage and improve recursion efficiency, it complicates
+// stack trace debugging, making error tracking harder. Additionally, many engines prioritize just-in-time (JIT) optimizations that favor
+// execution speed over memory savings. JavaScript’s flexibility, including features like closures and dynamic function calls, further
+// complicates reliable TCO implementation. As a result, despite its benefits, TCO remains uncommon in modern JavaScript engines—**notably,
+// V8 (Chrome, Node.js), SpiderMonkey (Firefox), and JavaScriptCore (Safari)** do not support it.
