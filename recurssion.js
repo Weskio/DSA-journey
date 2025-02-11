@@ -58,3 +58,22 @@ const fibonacci2 = (n) => {
 };
 
 console.log("fibonacci of 5:", fibonacci2(5));
+
+//FOR LEARNING REASONS HERE ARE SOME OPTIONAL WAYS TO IMPLEMENT THESE RECURSSIONS WITH TAIL CALL OPTIMIZATION(FEATURE REMOVED FROM SOME JS ENGINES LIKE V8)
+
+//TCO Implementation (Memory Complexity: O(1), Time complexity: O(n))
+const factorial3 = (n, acc = 1) => {
+  if (n <= 1) {
+    return acc;
+  }
+  return factorial(n - 1, n * acc); // Tail-recursive call
+};
+
+//TCO Implementation (Memory Complexity: O(1), Time complexity: O(n))
+const fibonacci3 = (n, prev = 0, curr = 1) => {
+  if (n === 0) return prev;
+  if (n === 1) return curr;
+  return fibonacci(n - 1, curr, prev + curr);
+};
+
+
