@@ -73,4 +73,4 @@ function merge(arr, l, m, r) {
   }
 }
 
-console.log("merge sort:", mergeSort(messedArr, 0, messedArr.length-1));
+console.log("merge sort:", mergeSort(messedArr, 0, messedArr.length - 1));
