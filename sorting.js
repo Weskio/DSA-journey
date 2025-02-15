@@ -74,3 +74,28 @@ function merge(arr, l, m, r) {
 }
 
 console.log("merge sort:", mergeSort(messedArr, 0, messedArr.length - 1));
+
+//Quick sort algorithm. by far the only unstable sorting algorithm. Time complexity: O(n^2) 
+const quickSort = (arr, start, end) => {
+  if (end - start + 1 <= 1) return null;
+
+  let pivot = arr[end];
+  let left = start;
+
+  for (let i = start; i < end; i++) {
+    if (arr[i] < pivot) {
+      let temp = arr[left];
+      arr[left] = arr[i];
+      arr[i] = temp;
+      left++;
+    }
+  }
+  arr[end] = arr[left];
+
+  quickSort(arr, start, left - 1);
+  quickSort(arr, left + 1, end);
+
+  return arr;
+};
+
+console.log("quick sort:", quickSort(messedArr, 0, messedArr.length - 1));
