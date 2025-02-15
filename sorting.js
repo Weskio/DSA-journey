@@ -75,7 +75,7 @@ function merge(arr, l, m, r) {
 
 console.log("merge sort:", mergeSort(messedArr, 0, messedArr.length - 1));
 
-//Quick sort algorithm. by far the only unstable sorting algorithm. Time complexity: O(n^2) 
+//Quick sort algorithm. by far the only unstable sorting algorithm. Time complexity: O(n^2)
 const quickSort = (arr, start, end) => {
   if (end - start + 1 <= 1) return null;
 
@@ -99,3 +99,10 @@ const quickSort = (arr, start, end) => {
 };
 
 console.log("quick sort:", quickSort(messedArr, 0, messedArr.length - 1));
+
+// Summary Table:
+
+// Algorithm	          Best Case Time   	Average Case Time	     Worst Case Time     	Space Complexity
+// Iteration sort       O(n)               O(n^2)                O(n^2)               O(1)
+// Merge sort           O(nlogn)           O(nlogn)              O(nlogn)             O(n)
+// Quick sort           O(nlogn)           O(nlogn)              O(n^2)               O(logn)
