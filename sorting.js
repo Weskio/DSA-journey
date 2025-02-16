@@ -84,9 +84,10 @@ const quickSort = (arr, start, end) => {
 
   for (let i = start; i < end; i++) {
     if (arr[i] < pivot) {
-      let temp = arr[left];
-      arr[left] = arr[i];
-      arr[i] = temp;
+      // let temp = arr[left];
+      // arr[left] = arr[i];
+      // arr[i] = temp;
+      [arr[i], arr[left]] = [arr[left], arr[i]];
       left++;
     }
   }
