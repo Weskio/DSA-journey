@@ -19,3 +19,24 @@ const twoSum = (nums, target) => {
 
 (nums = [2, 7, 11, 15]), (target = 9);
 console.log(twoSum(nums, target));
+
+//MORE OPTIMIZED SOLUTION Time complexity: O(n) Space complexity: O(n)
+const twoSumOptimized = (nums, target) => {
+  let numMap = new Map();
+
+  for (let i = 0; i < nums.length; i++) {
+    let complement = target - nums[i];
+
+    if (numMap.has(complement)) {
+      return [numMap.get(complement), i];
+    }
+
+    numMap.set(nums[i], i);
+  }
+
+  return [];
+};
+
+console.log("optimized two sum:", twoSumOptimized(nums, target));
+
+//PS: i feel dumb for feeling happy my solution worked😪
