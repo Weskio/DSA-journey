@@ -106,3 +106,71 @@ const median = (arr) => {
 };
 
 console.log(median(medArr));
+
+//mode of an array
+const mode = (arr) => {
+  let arrMap = new Map();
+  let maxCount = 0;
+  let modeVal = 0;
+
+  for (val of arr) {
+    arrMap.set(val, (arrMap.get(val) || 0) + 1);
+  }
+
+  for (const [val, count] of arrMap.entries()) {
+    if (count > maxCount) {
+      maxCount = count;
+      modeVal = val;
+    }
+  }
+
+  return modeVal;
+};
+
+console.log("mode", mode(arrF));
+
+//2nd largest item of arr
+const secArr = [10, 20, 4, 45, 99, 99, 20];
+const secondLargest = (arr) => {
+  const orderedArr = arr.sort((a, b) => a - b);
+  const noDup = [...new Set(orderedArr)];
+
+  return noDup[noDup.length - 2];
+};
+console.log(secondLargest(secArr));
+
+//two arrays equal
+const arr1 = [1, 2, 3, 4];
+const arr2 = [4, 3, 2, 1];
+// Output: true
+
+const equalArr = (arr1, arr2) => {
+  const orderedArr1 = arr1.sort((a, b) => a - b);
+  const orderedArr2 = arr2.sort((a, b) => a - b);
+
+  for (let i = 0; i < orderedArr1.length; i++) {
+    if (orderedArr1[i] === orderedArr2[i]) return true;
+  }
+
+  return false;
+};
+console.log(equalArr(arr1, arr2));
+
+//no duplicates without set
+const arrDup = [3, 5, 7, 3, 7, 8, 9, 5];
+// Output: [3, 5, 7, 8, 9]
+
+const noDuplicate = (arr) => {
+  let newArr = [];
+  let seen = {};
+
+  for (let i = 0; i < arr.length; i++) {
+    if (!seen[arr[i]]) {
+      newArr.push(arr[i]);
+      seen[arr[i]] = true;
+    }
+  }
+
+  return newArr;
+};
+console.log(noDuplicate(arrDup));
