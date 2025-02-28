@@ -174,3 +174,41 @@ const noDuplicate = (arr) => {
   return newArr;
 };
 console.log(noDuplicate(arrDup));
+
+const arrOcc = [1, 2, 2, 3, 5, 4, 8, 2, 1, 5];
+
+const occurenceVal = (arr, val) => {
+  return arr.reduce((acc, curr) => {
+    if (curr === val) {
+      acc++;
+    }
+
+    return acc;
+  }, 0);
+};
+
+console.log(occurenceVal(arrOcc, 1));
+
+const str = "hello";
+// Output: "olleh"
+
+const reverseStr = (str) => {
+  return str.split("").reverse().join("");
+};
+
+console.log(reverseStr(str));
+
+const paliStr = "racecar";
+// Output: true
+
+const palindrome = (str) => {
+  const reverse = str.split("").reverse().join("");
+  if (!reverse === str) {
+    return false;
+  }
+  return true;
+};
+
+console.log(palindrome(paliStr));
+
+
