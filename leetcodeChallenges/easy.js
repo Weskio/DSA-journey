@@ -42,6 +42,8 @@ console.log("optimized two sum:", twoSumOptimized(nums, target));
 //PS: i feel dumb for feeling happy my solution worked😪
 
 //Given a string s, return the longest palindromic substring in s.
+
+// Time complexity: O(n^3)
 const longestPalindrome = (s) => {
   let longest = "";
 
@@ -64,6 +66,7 @@ const longestPalindrome = (s) => {
 console.log(longestPalindrome("babad"));
 console.log(longestPalindrome("cbbd"));
 
+//Time complexity: O(n^2)
 const longestPalindrome2 = (s) => {
   let longest = "";
 
@@ -85,3 +88,6 @@ const longestPalindrome2 = (s) => {
 
   return longest;
 };
+
+console.log(longestPalindrome2("babad"));
+console.log(longestPalindrome2("cbbd"));
