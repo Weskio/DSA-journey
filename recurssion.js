@@ -66,16 +66,19 @@ const factorial3 = (n, acc = 1) => {
   if (n <= 1) {
     return acc;
   }
-  return factorial(n - 1, n * acc); // Tail-recursive call
+  return factorial3(n - 1, n * acc); // Tail-recursive call
 };
+
+console.log(factorial3(8))
 
 //TCO Implementation (Memory Complexity: O(1), Time complexity: O(n))
 const fibonacci3 = (n, prev = 0, curr = 1) => {
   if (n === 0) return prev;
   if (n === 1) return curr;
-  return fibonacci(n - 1, curr, prev + curr);
+  return fibonacci3(n - 1, curr, prev + curr);
 };
 
+console.log(fibonacci3(8))
 //FUN FACT ABOUT TCO: Tail Call Optimization (TCO) is not widely implemented in most JavaScript engines due to its complexity and
 // potential trade-offs in debugging and performance. While TCO can reduce stack usage and improve recursion efficiency, it complicates
 // stack trace debugging, making error tracking harder. Additionally, many engines prioritize just-in-time (JIT) optimizations that favor
