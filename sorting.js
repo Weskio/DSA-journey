@@ -107,3 +107,4 @@ console.log("quick sort:", quickSort(messedArr, 0, messedArr.length - 1));
 // Iteration sort       O(n)               O(n^2)                O(n^2)               O(1)
 // Merge sort           O(nlogn)           O(nlogn)              O(nlogn)             O(n)
 // Quick sort           O(nlogn)           O(nlogn)              O(n^2)               O(logn)
+// Bucket sort          O(n + k)           O(n + k)              O(n^2)               O(n + k)
