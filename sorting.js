@@ -2,7 +2,7 @@ const messedArr = [2, 8, 11, 6, 9, 1, 5, 17];
 
 //Insertion Sorting
 //Time complexity Best case: O(n) Worst Case: O(n^2) Space complexity: O(1)
-const insertion = (arr) => {
+const insertionSort = (arr) => {
   for (let i = 1; i < arr.length; i++) {
     let j = i - 1;
 
@@ -16,7 +16,7 @@ const insertion = (arr) => {
   return arr;
 };
 
-console.log("Ordered Array:", insertion(messedArr));
+console.log("Ordered Array:", insertionSort(messedArr));
 
 //Merge Sorting
 //Time complexity: O(nlogN) Space complexity: O(n)
@@ -100,6 +100,30 @@ const quickSort = (arr, start, end) => {
 };
 
 console.log("quick sort:", quickSort(messedArr, 0, messedArr.length - 1));
+
+const arrB = [0, 1, 0, 2, 4, 5, 0, 1, 3];
+const bucketSort = (arr) => {
+  let minValue = Math.min(...arr);
+  let maxValue = Math.max(...arr);
+
+  let bucketSize = 1;
+  let bucketCount = Math.floor((maxValue - minValue) / bucketSize) + 1;
+
+  let bucketArr = new Array(bucketCount);
+
+  for (let i = 0; i < arr.length; i++) {
+    bucketArr[arr[i]] = [];
+  }
+
+  for (let i = 0; i < arr.length; i++) {
+    const bucketIndex = Math.floor((arr[i] - minValue) / bucketSize);
+    bucketArr[bucketIndex].push(arr[i]);
+  }
+
+  return bucketArr.flat();
+};
+
+console.log(bucketSort(arrB));
 
 // Summary Table:
 
