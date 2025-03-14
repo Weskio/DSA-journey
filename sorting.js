@@ -102,6 +102,10 @@ const quickSort = (arr, start, end) => {
 console.log("quick sort:", quickSort(messedArr, 0, messedArr.length - 1));
 
 const arrB = [0, 1, 0, 2, 4, 5, 0, 1, 3];
+
+// Bucket sorting are generally used with a specified bucketSize, any bucket size 
+// exceeding 1 also means implementation with another sorting strategy in the process 
+// so personally it makes sense to me it always stays 1
 const bucketSort = (arr) => {
   let minValue = Math.min(...arr);
   let maxValue = Math.max(...arr);
