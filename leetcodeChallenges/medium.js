@@ -90,3 +90,24 @@ const lengthOfLongestSubstring = (s) => {
 }
 
 console.log(lengthOfLongestSubstring("abcabcbb"));
+
+// Given a string s, return the longest palindromic substring in s
+
+
+const s = "babad"
+const longestPalindrome = (s) => {
+  const stringArr = s.split('')
+  const reveresArr = s.split('').reverse()
+  let palindromeArr = []
+
+  for(let i = 0; i< stringArr.length ; i++){
+    if(stringArr[i] === reveresArr[i]){
+      palindromeArr.push(stringArr[i])
+    }
+  }
+
+  return palindromeArr.join('')
+}
+
+
+console.log(longestPalindrome(s))
