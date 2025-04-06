@@ -124,3 +124,45 @@ const reverse = (x) => {
 };
 
 console.log(reverse(2001));
+
+// string to integer
+
+const myAtoi = (s) => {
+  let index = 0;
+  let sign = 1;
+  let result = 0;
+  const INT_MAX = Math.pow(2, 31) - 1;
+  const INT_MIN = -Math.pow(2, 31);
+
+  while (index < s.length && s[index] === " ") {
+    index++;
+  }
+
+  if (index < s.length && (s[index] === "+" || s[index] === "-")) {
+    sign = s[index] === "-" ? -1 : 1;
+    index++;
+  }
+
+  while (index < s.length && s[index] >= "0" && s[index] <= "9") {
+    const digit = s.charCodeAt(index) - "0".charCodeAt(0);
+
+    if (
+      result > Math.floor(INT_MAX / 10) ||
+      (result === Math.floor(INT_MAX / 10) && digit > INT_MAX % 10)
+    ) {
+      return sign === 1 ? INT_MAX : INT_MIN;
+    }
+
+    result = result * 10 + digit;
+    index++;
+  }
+
+  result *= sign;
+
+  if (result > INT_MAX) return INT_MAX;
+  if (result < INT_MIN) return INT_MIN;
+
+  return result;
+};
+
+console.log(myAtoi('1337c0d3'))
