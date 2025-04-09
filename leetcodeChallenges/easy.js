@@ -91,3 +91,10 @@ const longestPalindrome2 = (s) => {
 
 console.log(longestPalindrome2("babad"));
 console.log(longestPalindrome2("cbbd"));
+
+// Given an integer x, return true if x is a palindrome, and false otherwise.
+const isPalindrome = function (x) {
+  let xStr = x.toString().split("").reverse().join("");
+
+  return (parseInt(xStr) === x)
+};
