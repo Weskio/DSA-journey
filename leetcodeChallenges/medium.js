@@ -165,4 +165,41 @@ const myAtoi = (s) => {
   return result;
 };
 
-console.log(myAtoi('1337c0d3'))
+console.log(myAtoi("1337c0d3"));
+
+// Integer to Roman numeral
+
+const intToRoman = (num) => {
+  const val = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
+  const sym = [
+    "M",
+    "CM",
+    "D",
+    "CD",
+    "C",
+    "XC",
+    "L",
+    "XL",
+    "X",
+    "IX",
+    "V",
+    "IV",
+    "I",
+  ];
+
+  let roman = "";
+  let i = 0;
+
+  while (num > 0) {
+    // Find the largest value that fits into num
+    while (num >= val[i]) {
+      roman += sym[i];
+      num -= val[i];
+    }
+    i++;
+  }
+
+  return roman;
+};
+
+console.log(intToRoman(9))
