@@ -191,7 +191,6 @@ const intToRoman = (num) => {
   let i = 0;
 
   while (num > 0) {
-    // Find the largest value that fits into num
     while (num >= val[i]) {
       roman += sym[i];
       num -= val[i];
@@ -202,4 +201,4 @@ const intToRoman = (num) => {
   return roman;
 };
 
-console.log(intToRoman(9))
+console.log(intToRoman(9));
