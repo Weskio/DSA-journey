@@ -168,7 +168,6 @@ const myAtoi = (s) => {
 console.log(myAtoi("1337c0d3"));
 
 // Integer to Roman numeral
-
 const intToRoman = (num) => {
   const val = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
   const sym = [
@@ -202,3 +201,34 @@ const intToRoman = (num) => {
 };
 
 console.log(intToRoman(9));
+
+// Roman to Int
+const romanToInt = (s) => {
+  const romanMap = {
+    I: 1,
+    V: 5,
+    X: 10,
+    L: 50,
+    C: 100,
+    D: 500,
+    M: 1000,
+  };
+
+  let total = 0;
+
+  for (let i = 0; i < s.length; i++) {
+    const current = romanMap[s[i]];
+    const next = romanMap[s[i + 1]];
+
+    if (current < next) {
+      total += next - current;
+      i++;
+    } else {
+      total += current;
+    }
+  }
+
+  return total;
+};
+
+console.log(romanToInt('IV'))
