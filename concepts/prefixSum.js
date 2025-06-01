@@ -36,3 +36,22 @@ const subarraySum = (nums, k) => {
 }
 
 console.log(subarraySum([1, 1, 1], 2));
+
+
+// Find Pivot index
+const pivotIndex = (nums) => {
+  const totalSum = nums.reduce((sum, num) => sum + num, 0);
+  let leftSum = 0;
+
+  for (let i = 0; i < nums.length; i++) {
+      const rightSum = totalSum - leftSum - nums[i];
+      if (leftSum === rightSum) {
+          return i;
+      }
+      leftSum += nums[i];
+  }
+
+  return -1;
+}
+
+console.log(pivotIndex([1, 7, 3, 6, 5, 6])); // Output: 3
