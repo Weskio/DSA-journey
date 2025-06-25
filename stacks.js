@@ -41,3 +41,29 @@ const calPoints = (operations) => {
 };
 
 console.log(calPoints(["5","2","C","D","+"]))
+
+// valid parenthesis
+
+const validParenthesis = (s) => {
+  const stack = []
+  const map = {
+    '(': ')',
+    '{': '}',
+    '[': ']'
+  }
+
+  for(const char of s){
+    if(char in map ){
+      stack.push(char)
+    }else{
+      const last = stack.pop()
+      if(map[last] !== char){
+        return false
+      }
+    }
+  }
+
+  return stack.length === 0
+}
+
+console.log(validParenthesis("([])"))
